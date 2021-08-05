@@ -1,5 +1,10 @@
 .App {
+  background-color: #333333;
+  color: white;
   text-align: center;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 8fr 1fr;
 }
 
 .App-logo {
@@ -14,14 +19,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -35,4 +37,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header-container {
+  background: #444444;
+  border-radius: 8px;
+  box-shadow: 0px 12px 24px #222222;
+  color: #DDDDDD;
+  padding: 32px;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.location {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.github-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  opacity: 0.75;
+  transition: 0.125s;
+}
+
+.github-img:hover {
+  transform: translateY(-2px);
+  opacity: 1;
 }
