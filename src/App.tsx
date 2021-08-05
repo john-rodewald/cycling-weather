@@ -8,6 +8,7 @@ const CONSTANTS: Record<string, number> = {
   maximumTemperature: 25,
   maximumWindSpeed: 20,
   maximumCloudCoverage: 70,
+  hoursIntoFuture: 2,
 };
 
 const STRINGS: Record<string, string> = {
@@ -37,13 +38,17 @@ async function loadForecast(location: string, apiKey: string): Promise<Forecast>
 function decide(forecast: Forecast | undefined): Decision {
   if (!forecast) return { value: false, reason: STRINGS.dataMessage };
 
-  const data: HourlyDatapoint[] = forecast.forecast.forecastday[0].hour.slice(0, 6);
+  const currentHour = new Date().getHours();
+  const data: HourlyDatapoint[] = forecast.forecast.forecastday[0].hour.slice(currentHour, currentHour + CONSTANTS.hoursIntoFuture);
   const averageTemperature: number = data.reduce((prev, acc) => prev + acc.temp_c, 0) / data.length;
   const averageWindSpeed: number = data.reduce((prev, acc) => prev + acc.wind_kph, 0) / data.length;
   const averageCloudCoverage: number = data.reduce((prev, acc) => prev + acc.cloud, 0) / data.length;
-  const willItRain: boolean = data.every((point) => point.will_it_rain === 1);
+  const willItRain: boolean = data.filter((point) => point.will_it_rain === 1).length > 0;
   const averageRainAmount: number = data.reduce((prev, acc) => prev + acc.precip_mm, 0) / data.length;
-  console.log(averageRainAmount);
+  console.log('data', data);
+  console.log('averageRainAmount', averageRainAmount);
+  console.log('averageTemperature', averageTemperature);
+  console.log('averageWindSpeed', averageWindSpeed);
 
   if (averageTemperature < CONSTANTS.minimumTemperature)
     return { value: false, reason: STRINGS.coldMessage };
@@ -64,7 +69,7 @@ function decide(forecast: Forecast | undefined): Decision {
 const Title = ({ text }: TitleProps) => <h1 className="title">{text}</h1>;
 const Subtitle = ({ text }: SubtitleProps) => <h2 className="subtitle">{text}</h2>;
 const LocationInfo = ({ location }: LocationInfoProps) => <p className="location">({location})</p>;
-const GithubLink = () => <a href={STRINGS.githubLink}><img className="github-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcKR3b2Q6L7kLv3kV04kBtcs-FaYRsYfxRQ&usqp=CAU"/></a>;
+const GithubLink = () => <a href={STRINGS.githubLink}><img alt="github-icon" className="github-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZcKR3b2Q6L7kLv3kV04kBtcs-FaYRsYfxRQ&usqp=CAU"/></a>;
 
 // Main entry point
 const App = () => {
@@ -83,7 +88,7 @@ const App = () => {
     loadForecast(location, currentApiKey).then((forecast) => {
       setDecision(decide(forecast));
     });
-  }, []);
+  }, [currentApiKey]);
 
   return (
     <div className="App">
