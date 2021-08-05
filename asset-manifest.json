@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cycling-weather/static/css/main.876db294.chunk.css",
+    "main.js": "/cycling-weather/static/js/main.d6fcc09d.chunk.js",
+    "main.js.map": "/cycling-weather/static/js/main.d6fcc09d.chunk.js.map",
+    "runtime-main.js": "/cycling-weather/static/js/runtime-main.5f9f10a9.js",
+    "runtime-main.js.map": "/cycling-weather/static/js/runtime-main.5f9f10a9.js.map",
+    "static/js/2.231bed8f.chunk.js": "/cycling-weather/static/js/2.231bed8f.chunk.js",
+    "static/js/2.231bed8f.chunk.js.map": "/cycling-weather/static/js/2.231bed8f.chunk.js.map",
+    "static/js/3.89ee7625.chunk.js": "/cycling-weather/static/js/3.89ee7625.chunk.js",
+    "static/js/3.89ee7625.chunk.js.map": "/cycling-weather/static/js/3.89ee7625.chunk.js.map",
+    "index.html": "/cycling-weather/index.html",
+    "static/css/main.876db294.chunk.css.map": "/cycling-weather/static/css/main.876db294.chunk.css.map",
+    "static/js/2.231bed8f.chunk.js.LICENSE.txt": "/cycling-weather/static/js/2.231bed8f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f9f10a9.js",
+    "static/js/2.231bed8f.chunk.js",
+    "static/css/main.876db294.chunk.css",
+    "static/js/main.d6fcc09d.chunk.js"
+  ]
+}
