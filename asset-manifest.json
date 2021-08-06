@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cycling-weather/static/css/main.876db294.chunk.css",
-    "main.js": "/cycling-weather/static/js/main.d6fcc09d.chunk.js",
-    "main.js.map": "/cycling-weather/static/js/main.d6fcc09d.chunk.js.map",
+    "main.js": "/cycling-weather/static/js/main.1f60f5a3.chunk.js",
+    "main.js.map": "/cycling-weather/static/js/main.1f60f5a3.chunk.js.map",
     "runtime-main.js": "/cycling-weather/static/js/runtime-main.5f9f10a9.js",
     "runtime-main.js.map": "/cycling-weather/static/js/runtime-main.5f9f10a9.js.map",
     "static/js/2.231bed8f.chunk.js": "/cycling-weather/static/js/2.231bed8f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5f9f10a9.js",
     "static/js/2.231bed8f.chunk.js",
     "static/css/main.876db294.chunk.css",
-    "static/js/main.d6fcc09d.chunk.js"
+    "static/js/main.1f60f5a3.chunk.js"
   ]
 }
